@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  annotations:
+    kubernetes.io/enforce-mountable-secrets: "true"
+  name: servicea
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicea
+  labels:
+    app: serviceA
+    service: servicea
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: serviceA
+      service: servicea
+  template:
+    metadata:
+      labels:
+        app: serviceA
+        service: servicea
+    spec:
+      serviceAccountName: servicea
+      
+      containers:
+      - name: servicea-container
+        image: hhana982/servicea:1.<version>
+        ports:
+        - containerPort: 5000
+        
+        env: 
