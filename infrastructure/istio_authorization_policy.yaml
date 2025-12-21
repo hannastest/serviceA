@@ -14,6 +14,7 @@ spec:
         principals: 
         - cluster.local/ns/projectA/sa/serviceA
         - cluster.local/ns/projectA/sa/serviceA
+        - cluster.local/ns/projectA/sa/serviceB
         - cluster.local/ns/projectA/sa/serviceA
         - cluster.local/ns/projectA/sa/serviceA
         
