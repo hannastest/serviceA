@@ -12,6 +12,5 @@ spec:
   - from:
     - source:
         principals: 
-        - cluster.local/ns/projectA/sa/aa
         - cluster.local/ns/projectA/sa/service3
         
